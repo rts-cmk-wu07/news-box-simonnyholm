@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
 
-
-const Nav = ({ linkPath, linkIcon, appHeading }) => {
+const Nav = () => {
   return (
     <nav>
-      <Link path={linkPath}>
-        
-      </Link>
-      <h1>{appHeading}</h1>
+      <Link></Link>
+      <h1>{}</h1>
       <Link></Link>
     </nav>
   );
