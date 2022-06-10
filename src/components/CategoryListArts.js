@@ -36,7 +36,11 @@ const CategoryListArts = () => {
         cat.results.map((art) => (
           <article key={art.created_date}>
             <div className="img">
-              <img src={art.multimedia[0].url} alt={art.multimedia[0].caption} title={art.multimedia[0].caption}/>
+              <img
+                src={art.multimedia[0].url}
+                alt={art.multimedia[0].caption}
+                title={art.multimedia[0].caption}
+              />
             </div>
             <div className="text">
               <a href={art.url}>

@@ -1,13 +1,13 @@
-import { FaNewspaper } from "react-icon/fa";
+import { FaNewspaper } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
+import CategoryListArts from "./CategoryListArts";
 
 import { Link } from "react-router-dom";
 
 const CategorySectionArts = () => {
   return (
     <section>
-      {" "}
-      <p>vhjhj</p>
-      {/* <div className="sectionHead">
+      <div className="sectionHead">
         <div className="sectionIcon">
           <Link>
             <FaNewspaper />
@@ -20,7 +20,7 @@ const CategorySectionArts = () => {
           </Link>
         </div>
       </div>
-      <CategoryListArts /> */}
+      <CategoryListArts />
     </section>
   );
 };
