@@ -34,7 +34,7 @@ const CategoryListArts = () => {
       {isLoading && <p>Content is loading...</p>}
       {cat &&
         cat.results.map((art) => (
-          <article key={art.created_date}>
+          <article key={art.url}>
             <div className="img">
               <img
                 src={art.multimedia[0].url}
