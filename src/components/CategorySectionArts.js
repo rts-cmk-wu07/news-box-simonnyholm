@@ -1,16 +1,26 @@
 import { FaNewspaper } from "react-icon/fa";
 
+import { Link } from "react-router-dom";
+
 const CategorySectionArts = () => {
   return (
     <section>
-      <div className="sectionHead">
+      {" "}
+      <p>vhjhj</p>
+      {/* <div className="sectionHead">
         <div className="sectionIcon">
-          <FaNewspaper />
+          <Link>
+            <FaNewspaper />
+          </Link>
         </div>
         <h2>Arts</h2>
-        <div className="unfoldIcon"></div>
+        <div className="unfoldIcon">
+          <Link>
+            <IoIosArrowForward />
+          </Link>
+        </div>
       </div>
-      <CategoryListArts />
+      <CategoryListArts /> */}
     </section>
   );
 };
