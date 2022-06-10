@@ -31,12 +31,19 @@ const CategoryListArts = () => {
 
   return (
     <>
-      {isLoading && <p>Vi tænker...</p>}
+      {isLoading && <p>Content is loading...</p>}
       {cat &&
         cat.results.map((art) => (
           <article key={art.created_date}>
-            <h2>{art.title}</h2>
-            <p>{art.abstract}</p>
+            <div className="img">
+              <img src={art.multimedia[0].url} alt={art.multimedia[0].caption} title={art.multimedia[0].caption}/>
+            </div>
+            <div className="text">
+              <a href={art.url}>
+                <h2>{art.title}</h2>
+              </a>
+              <p>{art.abstract}</p>
+            </div>
           </article>
         ))}
 
