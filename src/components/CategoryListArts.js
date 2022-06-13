@@ -1,7 +1,47 @@
 import { useState } from "react";
 import { useEffect } from "react";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+import { Color } from "../Color";
 
 const CategoryListArts = () => {
+  const styles = {
+    art: css`
+      display: flex;
+    `,
+    artImgDiv: css`
+      width: 80px;
+      height: 80px;
+
+      & img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    `,
+    artText: css`
+      padding: 20px;
+
+      & a {
+        text-decoration: none;
+        color: ${Color.onyx};
+      }
+
+      & h2 {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      & p {
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: left;
+        color: ${Color.slate};
+      }
+    `,
+  };
+
   const [cat, setCat] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,19 +70,20 @@ const CategoryListArts = () => {
   console.log("fetch", cat);
 
   return (
-    <>
+    <div>
       {isLoading && <p>Content is loading...</p>}
       {cat &&
         cat.results.map((art) => (
-          <article key={art.url}>
-            <div className="img">
+          <article css={styles.art} key={art.url}>
+            <div css={styles.artImgDiv} className="img">
               <img
+                css={styles.artImg}
                 src={art.multimedia[0].url}
                 alt={art.multimedia[0].caption}
                 title={art.multimedia[0].caption}
               />
             </div>
-            <div className="text">
+            <div css={styles.artText} className="text">
               <a href={art.url}>
                 <h2>{art.title}</h2>
               </a>
@@ -52,7 +93,7 @@ const CategoryListArts = () => {
         ))}
 
       {error && <p>{error}</p>}
-    </>
+    </div>
   );
 };
 
