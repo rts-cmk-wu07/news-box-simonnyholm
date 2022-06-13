@@ -3,19 +3,23 @@ import { useEffect } from "react";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Color } from "../Color";
+import "animate.css";
 
 const CategoryListArts = () => {
   const styles = {
     art: css`
       display: flex;
+      border-bottom: 2px solid ${Color.fossil};
+      padding: 0 0 0 10px;
     `,
     artImgDiv: css`
-      width: 80px;
-      height: 80px;
+      padding: 30px 0 20px 0;
+      width: 70px;
+      height: 70px;
 
       & img {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
       }
     `,
@@ -46,6 +50,8 @@ const CategoryListArts = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [animation, setAnimation] = useState("");
+
   useEffect(() => {
     fetch(
       "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=8ys3OngIk2CnakCkRcC1vXJApNERITqI"
@@ -70,11 +76,12 @@ const CategoryListArts = () => {
   console.log("fetch", cat);
 
   return (
-    <div className="animate__animated animate__BackInRight">
+    <div className={animation}>
       {isLoading && <p>Content is loading...</p>}
       {cat &&
-        cat.results.map((art) => (
+        cat.results.map((art, index) => (
           <article css={styles.art} key={art.url}>
+            <p>{index}</p>
             <div css={styles.artImgDiv} className="img">
               <img
                 css={styles.artImg}

@@ -13,10 +13,14 @@ const CategorySectionArts = () => {
     sectionHead: css`
       display: flex;
       justify-content: space-between;
-      padding: 25px 10px;
+      padding: 20px 10px 15px 10px;
+      border-bottom: 2px solid ${Color.fossil};
 
       & h2 {
-        margin: 0;
+        margin: 5px 9em 0 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
       }
 
       & div {
