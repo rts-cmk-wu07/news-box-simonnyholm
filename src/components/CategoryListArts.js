@@ -70,7 +70,7 @@ const CategoryListArts = () => {
   console.log("fetch", cat);
 
   return (
-    <div>
+    <div className="animate__animated animate__BackInRight">
       {isLoading && <p>Content is loading...</p>}
       {cat &&
         cat.results.map((art) => (

@@ -66,7 +66,7 @@ const CategorySectionArts = () => {
               <IoIosArrowDown />
             </div>
           </div>
-          <CategoryListArts className="animate__animated animate__BackInRight" />
+          <CategoryListArts />
         </section>
       )}
     </>
