@@ -48,7 +48,7 @@ const Nav = () => {
             <Link
               to="/settings"
               onClick={(event) => {
-                setNavHome(true);
+                setNavHome(false);
                 setNavSettings(true);
               }}
             >
@@ -70,8 +70,7 @@ const Nav = () => {
               <Link
                 to="/settings"
                 onClick={(event) => {
-                  setNavHome(true);
-                  setNavSettings(true);
+                  setNavHome(false);
                 }}
               >
                 <IoSettings />
