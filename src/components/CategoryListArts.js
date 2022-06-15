@@ -91,7 +91,7 @@ const CategoryListArts = () => {
               />
             </div>
             <div css={styles.artText} className="text">
-              <a href={art.url}>
+              <a href={art.url} target="_blank">
                 <h2>{art.title}</h2>
               </a>
               <p>{art.abstract}</p>
