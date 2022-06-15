@@ -33,13 +33,21 @@ const Nav = () => {
 
   const [navHome, setNavHome] = useState(true);
   const [navSettings, setNavSettings] = useState(false);
+  console.log("navHome", navHome);
+  console.log("navSettings", navSettings);
 
   return (
     <>
       {navHome && (
         <nav css={styles.nav}>
           <div>
-            <Link onClick={(event) => setNavHome(false)} to="/archive">
+            <Link
+              onClick={(event) => {
+                setNavHome(false);
+                setNavSettings(false);
+              }}
+              to="/archive"
+            >
               <BsInbox />
             </Link>
           </div>
@@ -60,17 +68,25 @@ const Nav = () => {
       {!navHome && (
         <nav css={styles.nav}>
           <div>
-            <Link to="/" onClick={(event) => setNavHome(true)}>
+            <Link
+              to="/"
+              onClick={(event) => {
+                setNavHome(true);
+                setNavSettings(false);
+              }}
+            >
               <IoIosArrowBack />
             </Link>
           </div>
-          <h1>Newsbox</h1>
+          {navSettings && <h1>Settings</h1>}
+          {!navSettings && <h1>Archive</h1>}
           <div>
             {!navSettings && (
               <Link
                 to="/settings"
                 onClick={(event) => {
                   setNavHome(false);
+                  setNavSettings(true);
                 }}
               >
                 <IoSettings />
