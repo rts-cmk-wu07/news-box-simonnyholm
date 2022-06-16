@@ -70,7 +70,7 @@ const CategorySectionArts = () => {
               <IoIosArrowDown />
             </div>
           </div>
-          <CategoryListArts />
+          <CategoryListArts unfold={unfold} />
         </section>
       )}
     </>
