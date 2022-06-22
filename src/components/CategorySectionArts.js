@@ -53,6 +53,9 @@ const CategorySectionArts = () => {
               <IoIosArrowForward />
             </div>
           </div>
+          
+            <CategoryListArts unfold={unfold} />
+          
         </section>
       )}
       {unfold && (
@@ -70,7 +73,9 @@ const CategorySectionArts = () => {
               <IoIosArrowDown />
             </div>
           </div>
-          <CategoryListArts unfold={unfold} />
+
+            <CategoryListArts unfold={unfold} />
+          
         </section>
       )}
     </>

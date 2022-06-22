@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { css } from "@emotion/react";
 import { Color } from "../Color";
 import "animate.css";
+import { useSwipeable } from "react-swipeable";
 
-const CategoryListArts = () => {
+const CategoryListArts = ({ unfold }) => {
   const styles = {
     art: css`
       display: flex;
@@ -50,7 +51,9 @@ const CategoryListArts = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [animation, setAnimation] = useState("");
+  const handlers = useSwipeable({
+    onSwiped: (eventData) => console.log("User Swiped!", eventData),
+  });
 
   useEffect(() => {
     fetch(
@@ -73,15 +76,29 @@ const CategoryListArts = () => {
       });
   }, []);
 
-  console.log("fetch", cat);
+  console.log("unfold", unfold);
 
   return (
-    <div className={animation}>
+    <div
+      /*className={
+        unfold === false
+          ? "animate__animated animate__slideOutDown"
+          : "animate__animated animate__slideOutUp"
+      }*/
+      style={
+        unfold === false
+          ? {
+              maxHeight: "0",
+              overflow: "hidden",
+              transistion: "width 2s",
+            }
+          : { minHeight: "100000px", transistion: "width 2s" }
+      }
+    >
       {isLoading && <p>Content is loading...</p>}
       {cat &&
         cat.results.map((art, index) => (
-          <article css={styles.art} key={art.url}>
-            <p>{index}</p>
+          <article {...handlers} css={styles.art} key={art.url}>
             <div css={styles.artImgDiv} className="img">
               <img
                 css={styles.artImg}

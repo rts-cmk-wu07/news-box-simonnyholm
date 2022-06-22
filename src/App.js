@@ -12,7 +12,7 @@ function App() {
     `,
   };
   return (
-    <NavContext.Provider>
+    <NavContext.Provider value={false}>
       <div css={styles.app} className="App">
         <Nav />
         <main>
