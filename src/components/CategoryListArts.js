@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 import { Color } from "../Color";
 import "animate.css";
 import { useSwipeable } from "react-swipeable";
+import { BsInbox } from "react-icons/bs";
 
 const CategoryListArts = ({ unfold }) => {
   const styles = {
@@ -80,6 +81,14 @@ const CategoryListArts = ({ unfold }) => {
 
   console.log("unfold", unfold);
 
+  var archive = JSON.parse(localStorage.getItem("archive"));
+  if (archive == null) archive = [];
+
+  /*
+   var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+    if(existingEntries == null) existingEntries = []
+  */
+
   return (
     <div
       /*className={
@@ -114,6 +123,22 @@ const CategoryListArts = ({ unfold }) => {
                 <h2>{art.title}</h2>
               </a>
               <p>{art.abstract}</p>
+            </div>
+            <div>
+              <BsInbox
+                onClick={(event) => {
+                  console.log(art);
+
+                  const artObject = {
+                    category: "Arts",
+                    art,
+                  };
+
+                  localStorage.setItem("art", JSON.stringify(artObject));
+                  archive.push(artObject);
+                  localStorage.setItem("archive", JSON.stringify(archive));
+                }}
+              />
             </div>
           </article>
         ))}
