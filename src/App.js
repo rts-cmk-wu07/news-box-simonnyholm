@@ -1,18 +1,27 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import "./App.css";
-import Nav from "./Components/Nav";
+
+import Nav from "./components/Nav";
 import { Outlet } from "react-router-dom";
+import { NavContext } from "./contexts/NavContext";
 
 function App() {
-  const linkIcon = "Icon"; /*conditional rendering herunder*/
-  const linkPath = "Path";
-  const appHeading = "Heading";
+  const styles = {
+    app: css`
+      padding: 20px 20px 20px 20px;
+    `,
+  };
   return (
-    <div className="App">
-      <Nav linkIcon={linkIcon} linkPath={linkPath} appHeading={appHeading} />
-      <main>
-        <Outlet />
-      </main>
-    </div>
+    <NavContext.Provider value={false}>
+      <div css={styles.app} className="App">
+        <Nav />
+        <main>
+          <Outlet />
+        </main>
+      </div>
+    </NavContext.Provider>
+
   );
 }
 
