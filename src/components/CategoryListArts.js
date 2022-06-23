@@ -55,6 +55,8 @@ const CategoryListArts = ({ unfold }) => {
     onSwiped: (eventData) => console.log("User Swiped!", eventData),
   });
 
+  /*biugb*/
+
   useEffect(() => {
     fetch(
       "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=8ys3OngIk2CnakCkRcC1vXJApNERITqI"
