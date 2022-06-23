@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import "./App.css";
+
 import Nav from "./components/Nav";
 import { Outlet } from "react-router-dom";
 import { NavContext } from "./contexts/NavContext";
@@ -20,6 +21,7 @@ function App() {
         </main>
       </div>
     </NavContext.Provider>
+
   );
 }
 
