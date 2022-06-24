@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 
 const Archive = () => {
-
-    /*Brug nedenstående i hvert fetch*/
+  /*Brug nedenstående i hvert fetch*/
   useEffect(() => {
     const archItems = JSON.parse(localStorage.getItem("archive"));
     console.log(archItems);
