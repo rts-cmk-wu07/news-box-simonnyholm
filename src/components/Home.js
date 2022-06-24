@@ -1,10 +1,11 @@
-import HomeList from "./HomeList";
+import CategorySectionArts from "./CategorySectionArts";
+
 import Search from "./Search";
 
 const Home = () => {
     return ( <>
     <Search/>
-    <HomeList/>
+    <CategorySectionArts/>
     </> );
 }
  
