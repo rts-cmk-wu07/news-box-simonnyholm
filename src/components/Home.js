@@ -1,10 +1,10 @@
-import HomeList from "./HomeList";
+import CategorySecitonArts from "./CategorySectionArts"
 import Search from "./Search";
 
 const Home = () => {
     return ( <>
     <Search/>
-    <HomeList/>
+    <CategorySecitonArts/>
     </> );
 }
  
