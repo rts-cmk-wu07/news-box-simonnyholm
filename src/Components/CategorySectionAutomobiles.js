@@ -8,6 +8,7 @@ import { useState } from "react";
 import "animate.css";
 import { Color } from "../Color";
 import CategoryListAutomobiles from "./CategoryListAutomobiles";
+import CategoryListArts from "./CategoryListArts";
 
 const CategorySectionAutomobiles = () => {
   const styles = {
