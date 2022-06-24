@@ -11,7 +11,4 @@ const Home = () => {
   );
 };
 
-
-/*søgefeltet skal have filterfunktion*/
-
 export default Home;
