@@ -2,9 +2,9 @@
 import { css } from "@emotion/react";
 import "./App.css";
 
-import Nav from "./components/Nav";
+import Nav from "./Components/Nav";
 import { Outlet } from "react-router-dom";
-import { NavContext } from "./contexts/NavContext";
+import { NavContext } from "./Contexts/NavContext";
 
 function App() {
   const styles = {
