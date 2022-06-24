@@ -1,14 +1,11 @@
-import CategorySectionArts from "./CategorySectionArts";
-
+import HomeList from "./HomeList";
 import Search from "./Search";
 
 const Home = () => {
-  return (
-    <>
-      <Search />
-      <CategorySectionArts />
-    </>
-  );
-};
-
+    return ( <>
+    <Search/>
+    <HomeList/>
+    </> );
+}
+ 
 export default Home;
